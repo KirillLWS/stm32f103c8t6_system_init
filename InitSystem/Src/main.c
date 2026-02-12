@@ -18,14 +18,37 @@
 
 #include <stdint.h>
 #include "system_stm32f1xx.h"
+#include "stm32f103xb.h"
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
+volatile uint32_t msTicks = 0;
+
+void SysTick_Handler(void)
+{
+    msTicks++;
+}
+
 int main(void)
 {
-	SystemInit();
-    /* Loop forever */
-	for(;;);
+    SystemInit();
+    SysTick_Config(SystemCoreClock / 1000); // 1ms тик
+
+    RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
+    GPIOC->CRH &= ~GPIO_CRH_CNF13;
+    GPIOC->CRH |= GPIO_CRH_MODE13_1;
+
+    uint32_t prevTicks = 0;
+
+    while(1)
+    {
+        if(msTicks - prevTicks >= 500)  // каждые 500 мс
+        {
+            prevTicks = msTicks;
+            GPIOC->ODR ^= GPIO_ODR_ODR13;
+        }
+    }
 }
+

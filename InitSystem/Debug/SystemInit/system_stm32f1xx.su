@@ -1,2 +1,3 @@
-../SystemInit/system_stm32f1xx.c:25:6:SystemInit	4	static
-../SystemInit/system_stm32f1xx.c:65:6:SystemCoreClockUpdate	24	static
+../SystemInit/system_stm32f1xx.c:19:6:ClockInit	16	static
+../SystemInit/system_stm32f1xx.c:70:6:SystemInit	8	static
+../SystemInit/system_stm32f1xx.c:111:6:SystemCoreClockUpdate	24	static

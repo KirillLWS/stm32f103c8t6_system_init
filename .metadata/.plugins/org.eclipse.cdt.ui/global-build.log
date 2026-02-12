@@ -1,4 +1,4 @@
-23:00:06 **** Build of configuration Debug for project InitSystem ****
+01:07:53 **** Build of configuration Debug for project InitSystem ****
 make -j8 all 
 arm-none-eabi-gcc "../SystemInit/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -I"/home/lewars/git_repos/stm32f103c8t6_system_init/InitSystem/SystemInit" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"SystemInit/system_stm32f1xx.d" -MT"SystemInit/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "SystemInit/system_stm32f1xx.o"
 arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -I"/home/lewars/git_repos/stm32f103c8t6_system_init/InitSystem/SystemInit" -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c8tx.d" -MT"Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
@@ -11,15 +11,50 @@ Finished building target: InitSystem.elf
 arm-none-eabi-size  InitSystem.elf 
 arm-none-eabi-objdump -h -S InitSystem.elf  > "InitSystem.list"
    text	   data	    bss	    dec	    hex	filename
-    580	      0	   1568	   2148	    864	InitSystem.elf
+   1416	      4	   1572	   2992	    bb0	InitSystem.elf
 Finished building: default.size.stdout
  
 Finished building: InitSystem.list
  
-23:00:10 **** Incremental Build of configuration Debug for project InitSystem ****
+01:07:56 **** Incremental Build of configuration Debug for project InitSystem ****
 make -j8 all 
 arm-none-eabi-size  InitSystem.elf 
    text	   data	    bss	    dec	    hex	filename
-    580	      0	   1568	   2148	    864	InitSystem.elf
+   1416	      4	   1572	   2992	    bb0	InitSystem.elf
+Finished building: default.size.stdout
+ 
+01:08:33 **** Incremental Build of configuration Debug for project InitSystem ****
+make -j8 all 
+arm-none-eabi-gcc "../SystemInit/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -I"/home/lewars/git_repos/stm32f103c8t6_system_init/InitSystem/SystemInit" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"SystemInit/system_stm32f1xx.d" -MT"SystemInit/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "SystemInit/system_stm32f1xx.o"
+arm-none-eabi-gcc -o "InitSystem.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/lewars/git_repos/stm32f103c8t6_system_init/InitSystem/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="InitSystem.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: InitSystem.elf
+ 
+arm-none-eabi-size  InitSystem.elf 
+arm-none-eabi-objdump -h -S InitSystem.elf  > "InitSystem.list"
+   text	   data	    bss	    dec	    hex	filename
+   1368	      4	   1572	   2944	    b80	InitSystem.elf
+Finished building: default.size.stdout
+ 
+Finished building: InitSystem.list
+ 
+01:08:39 **** Incremental Build of configuration Debug for project InitSystem ****
+make -j8 all 
+arm-none-eabi-size  InitSystem.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1368	      4	   1572	   2944	    b80	InitSystem.elf
+Finished building: default.size.stdout
+ 
+01:09:19 **** Incremental Build of configuration Debug for project InitSystem ****
+make -j8 all 
+arm-none-eabi-size  InitSystem.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1368	      4	   1572	   2944	    b80	InitSystem.elf
+Finished building: default.size.stdout
+ 
+01:09:22 **** Incremental Build of configuration Debug for project InitSystem ****
+make -j8 all 
+arm-none-eabi-size  InitSystem.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1368	      4	   1572	   2944	    b80	InitSystem.elf
 Finished building: default.size.stdout
  
