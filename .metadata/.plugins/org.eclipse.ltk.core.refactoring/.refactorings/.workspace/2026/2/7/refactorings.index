@@ -1,1 +1,5 @@
 1770923222121	Delete resource 'InitSystem/SystemInit/STM32F1'
+1770925994013	Delete resource 'InitSystem/SystemInit/cmsis_compiler.h'
+1770925996513	Delete resource 'InitSystem/SystemInit/cmsis_gcc.h'
+1770925999000	Delete resource 'InitSystem/SystemInit/cmsis_version.h'
+1770926037425	Delete resource 'InitSystem/SystemInit/stm32f1xx.h'

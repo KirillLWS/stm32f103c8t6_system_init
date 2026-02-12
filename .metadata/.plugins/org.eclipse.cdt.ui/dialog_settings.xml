@@ -10,4 +10,18 @@
 	</section>
 	<section name="CResourceRenameRefactoringInputPage">
 	</section>
+	<section name="PDOMSearchPage">
+		<item key="caseSensitive" value="false"/>
+		<item key="searchFlags" value="227191"/>
+		<list key="previousPatterns">
+			<item value="ErrorStatus"/>
+		</list>
+	</section>
+	<section name="NewHeaderFileCreationWizard.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="175"/>
+		<item key="DIALOG_Y_ORIGIN" value="214"/>
+		<item key="DIALOG_WIDTH" value="700"/>
+		<item key="DIALOG_HEIGHT" value="459"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu Sans|11.0|0|GTK|1|"/>
+	</section>
 </section>

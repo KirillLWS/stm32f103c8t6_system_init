@@ -1,4 +1,4 @@
-#include "stm32f103xb.h"
+#include "stm32f1xx.h"
 
 #if !defined  (HSE_VALUE) 
   #define HSE_VALUE               8000000U /*!< Default value of the External oscillator in Hz.
@@ -95,7 +95,7 @@ void SystemCoreClockUpdate (void)
       else
       {
         /* HSE selected as PLL clock entry */
-        if ((RCC->CFGR & RCC_CFGR_PLLXTPRE) != 0U)
+        if ((RCC->CFGR & RCC_CFGR_PLLXTPRE) != (uint32_t)RESET)
         {/* HSE oscillator clock divided by 2 */
           SystemCoreClock = (HSE_VALUE >> 1U) * pllmull;
         }

@@ -26,7 +26,7 @@
 #define __CORE_CM3_H_GENERIC
 
 #include <stdint.h>
-#include "cmsis_compiler_minimal_gcc.h"
+
 
 /**
   \page CMSIS_MISRA_Exceptions  MISRA-C:2004 Compliance Exceptions

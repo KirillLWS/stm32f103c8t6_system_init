@@ -22,11 +22,20 @@
  * limitations under the License.
  */
 
+#if   defined ( __ICCARM__ )
+  #pragma system_include         /* treat file as system include file for MISRA check */
+#elif defined (__clang__)
+  #pragma clang system_header   /* treat file as system include file */
+#endif
+
 #ifndef __CORE_CM3_H_GENERIC
 #define __CORE_CM3_H_GENERIC
 
 #include <stdint.h>
-#include "cmsis_compiler_minimal_gcc.h"
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
 
 /**
   \page CMSIS_MISRA_Exceptions  MISRA-C:2004 Compliance Exceptions
@@ -1915,6 +1924,13 @@ __STATIC_INLINE int32_t ITM_CheckChar (void)
 }
 
 /*@} end of CMSIS_core_DebugFunctions */
+
+
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __CORE_CM3_H_DEPENDANT */
 
