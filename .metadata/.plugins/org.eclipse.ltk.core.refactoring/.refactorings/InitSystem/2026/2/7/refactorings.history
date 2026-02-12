@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;core_cm3.h, stm32f103xb.h, stm32f1xx.h, system_stm32f1xx.c, system_stm32f1xx.h&apos; to &apos;SystemInit&apos;" description="Move 5 resources to &apos;SystemInit&apos;" destination="SystemInit" element1="SystemInit/STM32F1/core_cm3.h" element2="SystemInit/STM32F1/stm32f103xb.h" element3="SystemInit/STM32F1/stm32f1xx.h" element4="SystemInit/STM32F1/system_stm32f1xx.c" element5="SystemInit/STM32F1/system_stm32f1xx.h" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="5" stamp="1770923214663" updateReferences="true"/>
+</session>

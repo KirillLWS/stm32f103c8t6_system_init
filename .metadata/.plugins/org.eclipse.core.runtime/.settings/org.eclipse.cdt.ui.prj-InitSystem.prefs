@@ -1,0 +1,3 @@
+buildConsole/keepLog=true
+buildConsole/logLocation=/home/lewars/git_repos/stm32f103c8t6_system_init/.metadata/.plugins/org.eclipse.cdt.ui/InitSystem.build.log
+eclipse.preferences.version=1
