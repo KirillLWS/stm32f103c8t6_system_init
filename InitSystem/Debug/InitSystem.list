@@ -35,17 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 00000046  00000000  00000000  00001778  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0000ffcd  00000000  00000000  000017be  2**0
+ 16 .debug_macro  0000ff90  00000000  00000000  000017be  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00000888  00000000  00000000  0001178b  2**0
+ 17 .debug_line   0000087d  00000000  00000000  0001174e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0005459d  00000000  00000000  00012013  2**0
+ 18 .debug_str    00054459  00000000  00000000  00011fcb  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000665b0  2**0
+ 19 .comment      00000043  00000000  00000000  00066424  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000000b0  00000000  00000000  000665f4  2**2
+ 20 .debug_frame  000000b0  00000000  00000000  00066468  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000065  00000000  00000000  000666a4  2**0
+ 21 .debug_line_str 00000065  00000000  00000000  00066518  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -212,10 +212,6 @@ void SystemInit (void)
  80001ce:	b480      	push	{r7}
  80001d0:	af00      	add	r7, sp, #0
 
-  /* Configure the Vector Table location -------------------------------------*/
-#if defined(USER_VECT_TAB_ADDRESS)
-  SCB->VTOR = VECT_TAB_BASE_ADDRESS | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal SRAM. */
-#endif /* USER_VECT_TAB_ADDRESS */
 }
  80001d2:	bf00      	nop
  80001d4:	46bd      	mov	sp, r7

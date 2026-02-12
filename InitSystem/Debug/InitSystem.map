@@ -280,7 +280,6 @@ Discarded input sections
  .group         0x00000000        0xc ./SystemInit/system_stm32f1xx.o
  .group         0x00000000        0xc ./SystemInit/system_stm32f1xx.o
  .group         0x00000000        0xc ./SystemInit/system_stm32f1xx.o
- .group         0x00000000        0xc ./SystemInit/system_stm32f1xx.o
  .text          0x00000000        0x0 ./SystemInit/system_stm32f1xx.o
  .data          0x00000000        0x0 ./SystemInit/system_stm32f1xx.o
  .bss           0x00000000        0x0 ./SystemInit/system_stm32f1xx.o
@@ -828,7 +827,7 @@ LOAD /opt/st/stm32cubeide_2.0.0/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .debug_rnglists
                 0x0000002c       0x1a ./SystemInit/system_stm32f1xx.o
 
-.debug_macro    0x00000000     0xffcd
+.debug_macro    0x00000000     0xff90
  .debug_macro   0x00000000       0x6d ./Src/main.o
  .debug_macro   0x0000006d      0xad2 ./Src/main.o
  .debug_macro   0x00000b3f       0x22 ./Src/main.o
@@ -838,27 +837,26 @@ LOAD /opt/st/stm32cubeide_2.0.0/plugins/com.st.stm32cube.ide.mcu.externaltools.g
  .debug_macro   0x00000d43       0x6a ./Src/main.o
  .debug_macro   0x00000dad      0x1df ./Src/main.o
  .debug_macro   0x00000f8c       0xc8 ./SystemInit/system_stm32f1xx.o
- .debug_macro   0x00001054       0x2e ./SystemInit/system_stm32f1xx.o
- .debug_macro   0x00001082       0x22 ./SystemInit/system_stm32f1xx.o
- .debug_macro   0x000010a4       0x1c ./SystemInit/system_stm32f1xx.o
- .debug_macro   0x000010c0       0x22 ./SystemInit/system_stm32f1xx.o
- .debug_macro   0x000010e2       0xbd ./SystemInit/system_stm32f1xx.o
- .debug_macro   0x0000119f      0xd23 ./SystemInit/system_stm32f1xx.o
- .debug_macro   0x00001ec2     0xe09e ./SystemInit/system_stm32f1xx.o
- .debug_macro   0x0000ff60       0x6d ./SystemInit/system_stm32f1xx.o
+ .debug_macro   0x00001054       0x22 ./SystemInit/system_stm32f1xx.o
+ .debug_macro   0x00001076       0x1c ./SystemInit/system_stm32f1xx.o
+ .debug_macro   0x00001092       0x22 ./SystemInit/system_stm32f1xx.o
+ .debug_macro   0x000010b4       0xbd ./SystemInit/system_stm32f1xx.o
+ .debug_macro   0x00001171      0xd23 ./SystemInit/system_stm32f1xx.o
+ .debug_macro   0x00001e94     0xe09e ./SystemInit/system_stm32f1xx.o
+ .debug_macro   0x0000ff32       0x5e ./SystemInit/system_stm32f1xx.o
 
-.debug_line     0x00000000      0x888
+.debug_line     0x00000000      0x87d
  .debug_line    0x00000000      0x3a8 ./Src/main.o
  .debug_line    0x000003a8       0x7b ./Startup/startup_stm32f103c8tx.o
- .debug_line    0x00000423      0x465 ./SystemInit/system_stm32f1xx.o
+ .debug_line    0x00000423      0x45a ./SystemInit/system_stm32f1xx.o
 
-.debug_str      0x00000000    0x5459d
- .debug_str     0x00000000    0x5459d ./Src/main.o
+.debug_str      0x00000000    0x54459
+ .debug_str     0x00000000    0x54459 ./Src/main.o
                                0x3d74 (size before relaxing)
- .debug_str     0x0005459d        0x0 ./Startup/startup_stm32f103c8tx.o
+ .debug_str     0x00054459        0x0 ./Startup/startup_stm32f103c8tx.o
                                  0x81 (size before relaxing)
- .debug_str     0x0005459d        0x0 ./SystemInit/system_stm32f1xx.o
-                              0x54775 (size before relaxing)
+ .debug_str     0x00054459        0x0 ./SystemInit/system_stm32f1xx.o
+                              0x54631 (size before relaxing)
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Src/main.o
