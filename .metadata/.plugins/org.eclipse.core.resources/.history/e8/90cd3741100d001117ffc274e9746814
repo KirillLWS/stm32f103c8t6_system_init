@@ -18,42 +18,44 @@ const uint8_t APBPrescTable[8U] =  {0, 0, 0, 0, 1, 2, 3, 4};
 
 void ClockInit(void)
 {
-	uint32_t timeout = HSE_STARTUP_TIMEOUT;
+	uint32_t timeout = 0;
 
 	// Включение HSE
 	RCC->CR |= RCC_CR_HSEON;	// Включение кварца (8 Мгц)
 
 	/* Ожидание включения кварца */
-	while ((RCC->CR & RCC_CR_HSERDY) == 0UL && timeout > 0U)
+	while ((RCC->CR & RCC_CR_HSERDY) == 0UL || timeout < HSE_STARTUP_TIMEOUT)
 	{
-		timeout--;
+		timeout++;
 	}
 
 	if (RCC->CR & RCC_CR_HSERDY)
 	{
         // Flash latency для 72 MHz
-		FLASH->ACR = (FLASH->ACR & ~FLASH_ACR_LATENCY) | FLASH_ACR_PRFTBE | FLASH_ACR_LATENCY_2;
-
-        // Prescalers
-        RCC->CFGR &= ~(RCC_CFGR_HPRE | RCC_CFGR_PPRE1 | RCC_CFGR_PPRE2);
-        RCC->CFGR |= RCC_CFGR_HPRE_DIV1 | RCC_CFGR_PPRE1_DIV2 | RCC_CFGR_PPRE2_DIV1;
+		FLASH->ACR &= ~FLASH_ACR_LATENCY;	// Очистка
+        FLASH->ACR |= FLASH_ACR_PRFTBE | FLASH_ACR_LATENCY_2;
 
         // Настройка PLL (HSE * 9)
-        RCC->CFGR &= ~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL | RCC_CFGR_PLLXTPRE);	// Очистка регистра
+        RCC->CFGR &= ~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL | RCC_CFGR_PLLXTPRE);
         RCC->CFGR |= RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL9;
-
-        // Включение PLL
         RCC->CR |= RCC_CR_PLLON;
-        while (!(RCC->CR & RCC_CR_PLLRDY)){};	// Ожидание включения
+        while (!(RCC->CR & RCC_CR_PLLRDY));
+
+        // Делители шин
+        RCC->CFGR &= ~(RCC_CFGR_HPRE | RCC_CFGR_PPRE1 | RCC_CFGR_PPRE2);
+        RCC->CFGR |= RCC_CFGR_HPRE_DIV1 | RCC_CFGR_PPRE1_DIV2 | RCC_CFGR_PPRE2_DIV1;
 
         // Переключение на PLL
         RCC->CFGR &= ~RCC_CFGR_SW;
         RCC->CFGR |= RCC_CFGR_SW_PLL;
-        while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL){};	// waiting for switch
+        while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);
+
+        SystemCoreClock = 72000000;
 	}
     else
     {
         // HSE не стартует — остаёмся на HSI
+        SystemCoreClock = HSI_VALUE;
     }
     /* Настройка таблицы векторов */
     SCB->VTOR = FLASH_BASE;	// Начало таблицы - адрес начала флеш-памяти
