@@ -1,4 +1,4 @@
-00:34:45 **** Incremental Build of configuration Debug for project InitSystem ****
+03:08:03 **** Incremental Build of configuration Debug for project InitSystem ****
 make -j8 all 
 arm-none-eabi-size  InitSystem.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  InitSystem.elf
 Finished building: default.size.stdout
  
 
-00:34:45 Build Finished. 0 errors, 0 warnings. (took 125ms)
+03:08:03 Build Finished. 0 errors, 0 warnings. (took 63ms)
 
