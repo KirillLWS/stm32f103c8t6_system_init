@@ -34,10 +34,14 @@ void SysTick_Handler(void)
 int main(void)
 {
     SystemInit();
+
+    __disable_irq();
     SysTick_Config(SystemCoreClock / 1000); // 1ms тик
+    __enable_irq();
 
     RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
-    GPIOC->CRH &= ~GPIO_CRH_CNF13;
+    /* PC13 → output push-pull 2 MHz */
+    GPIOC->CRH &= ~(GPIO_CRH_MODE13 | GPIO_CRH_CNF13);
     GPIOC->CRH |= GPIO_CRH_MODE13_1;
 
     uint32_t prevTicks = 0;
